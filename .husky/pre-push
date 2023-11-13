@@ -3,4 +3,4 @@
 
 pnpm eslint
 pnpm stylelint
-pnpm test --run
+pnpm test run
