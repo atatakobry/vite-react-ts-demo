@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn eslint
-yarn stylelint
-yarn test --run
+pnpm eslint
+pnpm stylelint
+pnpm test run

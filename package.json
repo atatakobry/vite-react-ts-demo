@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "prepare": "husky install",
-    "dev": "vite",
+    "dev": "vite & pnpm graphql-codegen:watch",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "eslint": "eslint . --ext cjs,ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -15,15 +15,23 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "graphql-codegen": "graphql-codegen --config ./graphql-codegen.ts",
+    "graphql-codegen:watch": "graphql-codegen --config ./graphql-codegen.ts -w"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.7",
     "classnames": "^2.3.2",
+    "graphql": "^16.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.69.5"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@parcel/watcher": "^2.3.0",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
