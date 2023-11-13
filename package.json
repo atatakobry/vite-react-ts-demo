@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "prepare": "husky install",
-    "dev": "vite & pnpm graphql-codegen:watch",
+    "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "eslint": "eslint . --ext cjs,ts,tsx --report-unused-disable-directives --max-warnings 0",
