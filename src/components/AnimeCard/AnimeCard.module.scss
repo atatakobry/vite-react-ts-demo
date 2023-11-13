@@ -1,0 +1,24 @@
+.anime {
+  display: flex;
+}
+
+.coverImage {
+  display: block;
+  height: auto;
+  width: 120px;
+}
+
+.titles {
+  margin-top: 0.25em;
+  margin-left: 1em;
+}
+
+.title {
+  &.english {
+    color: #1a1a1a;
+  }
+
+  &.native {
+    color: #888;
+  }
+}
