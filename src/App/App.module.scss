@@ -1,0 +1,40 @@
+.layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  width: 100%;
+  padding: 0 12px;
+  background-color: #efefef;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 36px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 12px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  place-content: end;
+  height: 36px;
+  padding: 0 12px;
+  font-size: 12px;
+  background-color: #efefef;
+}

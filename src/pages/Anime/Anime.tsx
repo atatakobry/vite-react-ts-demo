@@ -7,7 +7,7 @@ const Anime = () => {
   const { loading, data } = useQuery(GET_ANIME_LIST, {
     variables: {
       page: 1,
-      perPage: 5,
+      perPage: 10,
     },
   });
 
@@ -16,6 +16,7 @@ const Anime = () => {
 
   return (
     <>
+      <h1>Anime</h1>
       {loading && <div>Loading...</div>}
       {!loading && !!animes && <AnimeList animes={animes} />}
     </>
