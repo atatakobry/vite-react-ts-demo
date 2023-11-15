@@ -4,6 +4,7 @@ import { ApolloProvider } from '@apollo/client';
 import { RouterProvider } from '@tanstack/react-router';
 import { aniListApolloClient } from './services/apolloClient';
 import router from './router';
+import 'modern-normalize/modern-normalize.css';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
