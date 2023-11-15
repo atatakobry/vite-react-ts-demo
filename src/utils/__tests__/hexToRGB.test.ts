@@ -1,6 +1,6 @@
 import { expect, it, describe } from 'vitest';
 
-import hexToRGB from '../hexToRGB.ts';
+import hexToRGB from '../hexToRGB';
 
 describe('`hexToRGB`', () => {
   it('should return `null` in corner cases', () => {

@@ -1,1 +1,1 @@
-export { default } from './AnimeCard.tsx';
+export { default } from './AnimeCard';
