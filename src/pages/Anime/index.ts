@@ -1,1 +1,1 @@
-export { default } from './Anime.tsx';
+export { default } from './Anime';

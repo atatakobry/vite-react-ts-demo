@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+
+  a {
+    color: blue;
+  }
+
+  :global(a.isActive) {
+    font-weight: bold;
+  }
+}
