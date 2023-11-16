@@ -1,4 +1,4 @@
-import { Link, Navigate } from '@tanstack/react-router';
+import { Link } from '@tanstack/react-router';
 import styles from './Navbar.module.scss';
 
 const Navbar = () => (
@@ -9,7 +9,6 @@ const Navbar = () => (
     <Link to="/anime" activeProps={{ className: 'isActive' }}>
       Anime
     </Link>
-    <Navigate to="/" />
   </div>
 );
 
