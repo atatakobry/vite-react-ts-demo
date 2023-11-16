@@ -1,14 +1,16 @@
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@tanstack/react-query';
+import { getAnimeList } from '../../api/aniList';
 import AnimeList from '../../components/AnimeList';
-import { GET_ANIME_LIST } from '../../graphql/operations/anime';
 import { TAnime } from '../../types/anime';
 
 const Anime = () => {
-  const { loading, data } = useQuery(GET_ANIME_LIST, {
-    variables: {
-      page: 1,
-      perPage: 10,
-    },
+  const { data, isLoading } = useQuery({
+    queryKey: ['anime', 1, 10],
+    queryFn: async () =>
+      getAnimeList({
+        page: 1,
+        perPage: 10,
+      }),
   });
 
   // TODO: 🤔
@@ -17,8 +19,8 @@ const Anime = () => {
   return (
     <>
       <h1>Anime</h1>
-      {loading && <div>Loading...</div>}
-      {!loading && !!animes && <AnimeList animes={animes} />}
+      {isLoading && <div>Loading...</div>}
+      {!isLoading && !!animes && <AnimeList animes={animes} />}
     </>
   );
 };
