@@ -1,1 +1,1 @@
-export { default as getAnimeList } from './getAnimeList';
+export { default as getAnimes } from './getAnimes';

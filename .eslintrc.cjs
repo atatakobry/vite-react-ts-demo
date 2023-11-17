@@ -12,7 +12,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:storybook/recommended',
   ],
-  ignorePatterns: ['dist', 'src/graphql/__generated__', '!.*'],
+  ignorePatterns: ['dist', 'src/gql', '!.*'],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', 'prettier'],
   rules: {

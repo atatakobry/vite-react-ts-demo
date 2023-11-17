@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getAnimeList } from '../../api/aniList';
+import { getAnimes } from '../../api/aniList';
 import AnimeList from '../../components/AnimeList';
 import { TAnime } from '../../types/anime';
 
@@ -7,7 +7,7 @@ const Anime = () => {
   const { data, isLoading } = useQuery({
     queryKey: ['anime', 1, 10],
     queryFn: async () =>
-      getAnimeList({
+      getAnimes({
         page: 1,
         perPage: 10,
       }),

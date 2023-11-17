@@ -1,10 +1,11 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
+import { ANI_LIST_API_URL } from './src/configs/api';
 
 const config: CodegenConfig = {
-  schema: 'https://graphql.anilist.co/',
-  documents: ['./src/graphql/operations/*.{ts,tsx}'],
+  schema: [ANI_LIST_API_URL],
+  documents: ['./src/api/**/*.{ts,tsx}'],
   generates: {
-    './src/graphql/__generated__/': {
+    './src/gql/': {
       preset: 'client',
       plugins: [],
       presetConfig: {
