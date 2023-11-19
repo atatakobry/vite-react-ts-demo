@@ -9,6 +9,9 @@ const Navbar = () => (
     <Link to="/anime" activeProps={{ className: 'isActive' }}>
       Anime
     </Link>
+    <Link to="/pokemon" activeProps={{ className: 'isActive' }}>
+      Pokemon
+    </Link>
   </div>
 );
 
