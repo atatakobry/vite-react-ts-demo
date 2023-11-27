@@ -1,25 +1,33 @@
-import { useQuery } from '@tanstack/react-query';
-import { getPokemons } from '../../api/pokeApi';
 import { TPokemon } from '../../types/pokemon';
+import useGetPokemons from './useGetPokemons';
 
 const Pokemon = () => {
-  const { data, isLoading } = useQuery({
-    queryKey: ['pokemon', 0, 10],
-    queryFn: () =>
-      getPokemons({
-        limit: 0,
-        offset: 10,
-      }),
+  const { data, isLoading, isFetching, hasNextPage, fetchNextPage } = useGetPokemons({
+    offset: 0,
+    limit: 25,
   });
 
   // TODO: 🤔
-  const pokemons: TPokemon[] = data?.results || [];
+  const pokemons: TPokemon[] = data || [];
 
   return (
     <>
       <h1>Pokemon</h1>
       {isLoading && <div>Loading...</div>}
-      {!isLoading && !!pokemons && pokemons.map((pokemon) => <div key={pokemon.url}>{pokemon.name}</div>)}
+      {!isLoading && !!pokemons && (
+        <>
+          {pokemons.map((pokemon, index) => (
+            <div key={pokemon.url}>
+              {index + 1}. {pokemon.name}
+            </div>
+          ))}
+          {hasNextPage && (
+            <button type="button" disabled={isFetching} onClick={() => fetchNextPage()}>
+              Load more
+            </button>
+          )}
+        </>
+      )}
     </>
   );
 };

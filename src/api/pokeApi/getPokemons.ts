@@ -2,8 +2,8 @@ import pokeApi from '../../services/pokeApi';
 import { TPokemon } from '../../types/pokemon';
 
 export type TGetPokemonsProps = {
-  limit: number;
   offset: number;
+  limit: number;
 };
 
 export type TGetPokemonsResponse = {
@@ -13,8 +13,8 @@ export type TGetPokemonsResponse = {
   results: TPokemon[];
 };
 
-const getPokemons: (props: TGetPokemonsProps) => Promise<TGetPokemonsResponse> = async ({ limit, offset }) => {
-  const response = await pokeApi.get('/pokemon', { params: { limit, offset } });
+const getPokemons: (props: TGetPokemonsProps) => Promise<TGetPokemonsResponse> = async ({ offset, limit }) => {
+  const response = await pokeApi.get('/pokemon', { params: { offset, limit } });
 
   return response.data;
 };
