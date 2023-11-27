@@ -3,7 +3,7 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 
 const useGetAnimes = ({ page, perPage, seasonYear, season }: TGetAnimesProps) =>
   useInfiniteQuery({
-    queryKey: ['anime', page, perPage, seasonYear, season],
+    queryKey: ['anime'],
     queryFn: ({ pageParam }) => getAnimes({ page: pageParam || page, perPage, seasonYear, season }),
     initialPageParam: 0,
     getNextPageParam: (lastPage) => {
