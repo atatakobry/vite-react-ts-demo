@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from '@tanstack/react-router';
 import Navbar from './components/Navbar';
+import Count from './components/Count';
 import styles from './App.module.scss';
 
 const RouterDevtools =
@@ -20,6 +21,7 @@ const App = () => (
     <div className={styles.layout}>
       <header className={styles.header}>
         <Navbar />
+        <Count />
       </header>
 
       <div className={styles.wrapper}>
