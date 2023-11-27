@@ -13,7 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  query getAnimes ($perPage: Int, $page: Int) {\n    Page(perPage: $perPage, page: $page) {\n      media {\n        id\n        coverImage {\n          extraLarge\n        }\n        title {\n          english\n          native\n        }\n      }\n    }\n  }\n": types.GetAnimesDocument,
+    "\nquery GetAnimes ($page: Int $perPage: Int $seasonYear: Int $season: MediaSeason) {\n  Page(page: $page perPage: $perPage) {\n    media(seasonYear: $seasonYear season: $season isAdult: false) {\n      id\n      coverImage {\n        extraLarge\n      }\n      title {\n        english\n        native\n        romaji\n      }\n    }\n    pageInfo {\n      currentPage\n      hasNextPage\n      lastPage\n      perPage\n      total\n    }\n  }\n}\n": types.GetAnimesDocument,
 };
 
 /**
@@ -33,7 +33,7 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query getAnimes ($perPage: Int, $page: Int) {\n    Page(perPage: $perPage, page: $page) {\n      media {\n        id\n        coverImage {\n          extraLarge\n        }\n        title {\n          english\n          native\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query getAnimes ($perPage: Int, $page: Int) {\n    Page(perPage: $perPage, page: $page) {\n      media {\n        id\n        coverImage {\n          extraLarge\n        }\n        title {\n          english\n          native\n        }\n      }\n    }\n  }\n"];
+export function gql(source: "\nquery GetAnimes ($page: Int $perPage: Int $seasonYear: Int $season: MediaSeason) {\n  Page(page: $page perPage: $perPage) {\n    media(seasonYear: $seasonYear season: $season isAdult: false) {\n      id\n      coverImage {\n        extraLarge\n      }\n      title {\n        english\n        native\n        romaji\n      }\n    }\n    pageInfo {\n      currentPage\n      hasNextPage\n      lastPage\n      perPage\n      total\n    }\n  }\n}\n"): (typeof documents)["\nquery GetAnimes ($page: Int $perPage: Int $seasonYear: Int $season: MediaSeason) {\n  Page(page: $page perPage: $perPage) {\n    media(seasonYear: $seasonYear season: $season isAdult: false) {\n      id\n      coverImage {\n        extraLarge\n      }\n      title {\n        english\n        native\n        romaji\n      }\n    }\n    pageInfo {\n      currentPage\n      hasNextPage\n      lastPage\n      perPage\n      total\n    }\n  }\n}\n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

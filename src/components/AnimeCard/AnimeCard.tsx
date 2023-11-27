@@ -12,7 +12,7 @@ const AnimeCard: React.FC<TAnimeCardProps> = ({ anime }) => {
     <div className={styles.anime}>
       <img className={styles.coverImage} src={anime.coverImage.extraLarge} alt="" />
       <div className={styles.titles}>
-        <div className={classNames(styles.title, styles.english)}>{anime.title.english}</div>
+        <div className={styles.title}>{anime.title.english || anime.title.romaji}</div>
         <div className={classNames(styles.title, styles.native)}>{anime.title.native}</div>
       </div>
     </div>

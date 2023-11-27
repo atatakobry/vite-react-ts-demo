@@ -1,26 +1,32 @@
-import { useQuery } from '@tanstack/react-query';
-import { getAnimes } from '../../api/aniList';
 import AnimeList from '../../components/AnimeList';
 import { TAnime } from '../../types/anime';
+import useGetAnimes from './useGetAnimes';
 
 const Anime = () => {
-  const { data, isLoading } = useQuery({
-    queryKey: ['anime', 1, 10],
-    queryFn: async () =>
-      getAnimes({
-        page: 1,
-        perPage: 10,
-      }),
+  const { data, isLoading, isFetching, hasNextPage, fetchNextPage } = useGetAnimes({
+    page: 1,
+    perPage: 25,
+    seasonYear: 2023,
+    season: 'FALL',
   });
 
   // TODO: 🤔
-  const animes: TAnime[] = (data?.Page?.media || []) as TAnime[];
+  const animes: TAnime[] = (data || []) as TAnime[];
 
   return (
     <>
       <h1>Anime</h1>
       {isLoading && <div>Loading...</div>}
-      {!isLoading && !!animes && <AnimeList animes={animes} />}
+      {!isLoading && !!animes && (
+        <>
+          <AnimeList animes={animes} />
+          {hasNextPage && (
+            <button type="button" disabled={isFetching} onClick={() => fetchNextPage()}>
+              Load more
+            </button>
+          )}
+        </>
+      )}
     </>
   );
 };
