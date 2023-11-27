@@ -6,5 +6,6 @@ export type TAnime = {
   title: {
     english: string;
     native: string;
+    romaji: string;
   };
 };

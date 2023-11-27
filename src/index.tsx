@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { ApolloProvider } from '@apollo/client';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RouterProvider } from '@tanstack/react-router';
-import { aniListApolloClient } from './services/apolloClient';
-import router from './router';
+import queryClient from './services/queryClient';
+import router from './services/router';
 import 'modern-normalize/modern-normalize.css';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ApolloProvider client={aniListApolloClient}>
+    <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-    </ApolloProvider>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   </React.StrictMode>,
 );
