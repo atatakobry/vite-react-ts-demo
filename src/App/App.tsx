@@ -1,7 +1,9 @@
-import React from 'react';
 import { Outlet } from '@tanstack/react-router';
-import Navbar from './components/Navbar';
+import React from 'react';
+
 import Count from './components/Count';
+import Navbar from './components/Navbar';
+
 import styles from './App.module.scss';
 
 const RouterDevtools =

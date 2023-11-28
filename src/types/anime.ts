@@ -1,8 +1,8 @@
 export type TAnime = {
-  id: number;
   coverImage: {
     extraLarge: string;
   };
+  id: number;
   title: {
     english: string;
     native: string;

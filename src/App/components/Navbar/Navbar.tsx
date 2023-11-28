@@ -1,4 +1,5 @@
 import { Link } from '@tanstack/react-router';
+
 import styles from './Navbar.module.scss';
 
 const Navbar = () => (

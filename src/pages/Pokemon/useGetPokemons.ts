@@ -1,5 +1,6 @@
-import { getPokemons, TGetPokemonsProps } from '../../api/pokeApi';
 import { useInfiniteQuery } from '@tanstack/react-query';
+
+import { getPokemons, TGetPokemonsProps } from '../../api/pokeApi';
 
 const useGetPokemons = ({ offset, limit }: TGetPokemonsProps) =>
   useInfiniteQuery({

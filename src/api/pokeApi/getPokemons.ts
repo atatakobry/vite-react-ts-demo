@@ -2,8 +2,8 @@ import pokeApi from '../../services/pokeApi';
 import { TPokemon } from '../../types/pokemon';
 
 export type TGetPokemonsProps = {
-  offset: number;
   limit: number;
+  offset: number;
 };
 
 export type TGetPokemonsResponse = {

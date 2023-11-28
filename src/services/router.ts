@@ -1,4 +1,5 @@
 import { Router } from '@tanstack/react-router';
+
 import routes from '../App/routes';
 
 declare module '@tanstack/react-router' {

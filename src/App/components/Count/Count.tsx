@@ -1,4 +1,5 @@
 import useAppStore from '../../useAppStore';
+
 import styles from './Count.module.scss';
 
 const Count = () => {
