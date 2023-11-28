@@ -1,6 +1,8 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
+
 import { TAnime } from '../../types/anime';
+
 import styles from './AnimeCard.module.scss';
 
 export type TAnimeCardProps = {

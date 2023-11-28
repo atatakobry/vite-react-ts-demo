@@ -1,4 +1,5 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
+
 import { ANI_LIST_URL } from './src/configs/api';
 
 const config: CodegenConfig = {

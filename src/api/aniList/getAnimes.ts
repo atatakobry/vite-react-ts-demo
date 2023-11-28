@@ -1,5 +1,5 @@
-import aniList from '../../services/aniList';
 import { gql } from '../../gql';
+import aniList from '../../services/aniList';
 
 export const GET_ANIMES = gql(`
 query GetAnimes ($page: Int $perPage: Int $seasonYear: Int $season: MediaSeason) {
@@ -29,8 +29,8 @@ query GetAnimes ($page: Int $perPage: Int $seasonYear: Int $season: MediaSeason)
 export type TGetAnimesProps = {
   page: number;
   perPage: number;
-  seasonYear: number;
   season: 'FALL' | 'SPRING' | 'SUMMER' | 'WINTER';
+  seasonYear: number;
 };
 
 const getAnimes = async ({ page, perPage, seasonYear, season }: TGetAnimesProps) =>

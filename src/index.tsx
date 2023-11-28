@@ -1,10 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RouterProvider } from '@tanstack/react-router';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
 import queryClient from './services/queryClient';
 import router from './services/router';
+
 import 'modern-normalize/modern-normalize.css';
 import './index.css';
 

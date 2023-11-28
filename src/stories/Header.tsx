@@ -1,4 +1,5 @@
 import { Button } from './Button';
+
 import './header.css';
 
 type User = {
@@ -6,10 +7,10 @@ type User = {
 };
 
 interface HeaderProps {
-  user?: User;
+  onCreateAccount: () => void;
   onLogin: () => void;
   onLogout: () => void;
-  onCreateAccount: () => void;
+  user?: User;
 }
 
 export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
