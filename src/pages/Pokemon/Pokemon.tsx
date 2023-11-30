@@ -2,7 +2,7 @@ import { TPokemon } from '../../types/pokemon';
 import useGetPokemons from './useGetPokemons';
 
 const Pokemon = () => {
-  const { data, isLoading, isFetching, hasNextPage, fetchNextPage } = useGetPokemons({
+  const { data, fetchNextPage, hasNextPage, isFetching, isLoading } = useGetPokemons({
     offset: 0,
     limit: 25,
   });

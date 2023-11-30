@@ -33,7 +33,7 @@ export type TGetAnimesProps = {
   seasonYear: number;
 };
 
-const getAnimes = async ({ page, perPage, seasonYear, season }: TGetAnimesProps) =>
+const getAnimes = async ({ page, perPage, season, seasonYear }: TGetAnimesProps) =>
   await aniList.request(GET_ANIMES, { page, perPage, seasonYear, season });
 
 export default getAnimes;

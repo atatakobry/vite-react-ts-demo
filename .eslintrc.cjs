@@ -14,10 +14,18 @@ module.exports = {
   ],
   ignorePatterns: ['dist', 'src/gql', '!.*'],
   parser: '@typescript-eslint/parser',
-  plugins: ['typescript-sort-keys', 'simple-import-sort', 'import', 'react-refresh', 'prettier'],
+  plugins: [
+    'typescript-sort-keys',
+    'sort-destructure-keys',
+    'simple-import-sort',
+    'import',
+    'react-refresh',
+    'prettier',
+  ],
   rules: {
     'typescript-sort-keys/interface': 'error',
     'typescript-sort-keys/string-enum': 'error',
+    'sort-destructure-keys/sort-destructure-keys': 'error',
     'simple-import-sort/imports': [
       'error',
       {
@@ -44,12 +52,6 @@ module.exports = {
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': 'error',
-    'react-refresh/only-export-components': [
-      'warn',
-      {
-        allowConstantExport: true,
-      },
-    ],
     'prettier/prettier': 'error',
   },
 };
