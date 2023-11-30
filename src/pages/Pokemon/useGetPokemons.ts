@@ -2,7 +2,7 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 
 import { getPokemons, TGetPokemonsProps } from '../../api/pokeApi';
 
-const useGetPokemons = ({ offset, limit }: TGetPokemonsProps) =>
+const useGetPokemons = ({ limit, offset }: TGetPokemonsProps) =>
   useInfiniteQuery({
     queryKey: ['pokemon'],
     queryFn: ({ pageParam }) => getPokemons({ offset: pageParam || offset, limit }),

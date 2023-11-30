@@ -13,7 +13,7 @@ interface HeaderProps {
   user?: User;
 }
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
+export const Header = ({ onCreateAccount, onLogin, onLogout, user }: HeaderProps) => (
   <header>
     <div className="storybook-header">
       <div>

@@ -3,7 +3,7 @@ import { TAnime } from '../../types/anime';
 import useGetAnimes from './useGetAnimes';
 
 const Anime = () => {
-  const { data, isLoading, isFetching, hasNextPage, fetchNextPage } = useGetAnimes({
+  const { data, fetchNextPage, hasNextPage, isFetching, isLoading } = useGetAnimes({
     page: 1,
     perPage: 25,
     seasonYear: 2023,
